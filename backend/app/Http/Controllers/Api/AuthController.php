@@ -20,9 +20,14 @@ class AuthController extends Controller
         $user = \App\Models\User::where('email', $credentials['email'])->first();
 
         if (!$user || !Hash::check($credentials['password'], $user->password)) {
-            throw ValidationException::withMessages([
-                'email' => ['Email atau password yang kamu masukkan salah.'],
-            ]);
+            return response()->json([
+                'message' => 'Email atau password salah.',
+            ], 401);
+        }
+        if (!$user->is_active) {
+            return response()->json([
+                'message' => 'Akun Anda sedang dinonaktifkan. Silakan hubungi Admin.',
+            ], 403);
         }
 
         $token = $user->createToken('simponi-app')->plainTextToken;
