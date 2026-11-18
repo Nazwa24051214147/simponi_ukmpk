@@ -9,6 +9,7 @@ class Role extends Model
 {
     protected $fillable = [
         'name',
+        'description',
     ];
 
     // Satu role dapat dimiliki banyak akun

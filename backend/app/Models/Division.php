@@ -9,6 +9,7 @@ class Division extends Model
 {
     protected $fillable = [
         'name',
+        'description',
     ];
 
     // Satu divisi memiliki banyak anggota
