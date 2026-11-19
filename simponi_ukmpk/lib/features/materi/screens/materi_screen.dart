@@ -1,6 +1,22 @@
-// lib/features/materi/screens/materi_screen.dart
-// Halaman materi dan dokumen organisasi UKMPK.
-// Menampilkan: daftar dokumen, pengelompokan per kategori.
-// Akses dokumen disesuaikan dengan kewenangan role pengguna.
-// Dokumen sensitif hanya dapat diakses oleh pengguna yang berwenang.
-// TODO: Implementasi setelah endpoint materi/dokumen tersedia di backend.
+import 'package:flutter/material.dart';
+
+import '../../../core/widgets/empty_state.dart';
+
+class MateriScreen extends StatelessWidget {
+  const MateriScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Materi & Dokumen'),
+      ),
+      body: const Center(
+        child: EmptyStateWidget(
+          message: 'Distribusi materi dan dokumen organisasi akan ditampilkan di sini.',
+          icon: Icons.folder_shared_outlined,
+        ),
+      ),
+    );
+  }
+}

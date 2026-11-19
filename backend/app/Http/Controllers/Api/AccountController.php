@@ -38,9 +38,14 @@ class AccountController extends Controller
             });
         }
 
+        $perPage = $request->integer('per_page', 10);
+        if ($perPage <= 0 || $perPage > 200) {
+            $perPage = 10;
+        }
+
         $accounts = $query
             ->orderBy('name')
-            ->paginate(10);
+            ->paginate($perPage);
 
         return response()->json([
             'success' => true,

@@ -31,9 +31,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+
+  # HTTP client untuk komunikasi dengan REST API Laravel
+  http: ^1.2.0
+
+  # State management
+  provider: ^6.1.2
+
+  # Penyimpanan token secara aman (Android Keystore / iOS Keychain)
+  flutter_secure_storage: ^9.2.2
 
 dev_dependencies:
   flutter_test:
